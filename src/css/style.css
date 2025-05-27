@@ -92,4 +92,29 @@ nav ul li a {
     width: 100%;
     background-color: rgb(149, 151, 161);
     padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.footer {
+  background-color: #222;
+  color: #eee;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.footer-link {
+  color: #6cf;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-credit {
+  font-size: 0.9em;
+  color: #aaa;
+  margin-top: 10px;
 }
