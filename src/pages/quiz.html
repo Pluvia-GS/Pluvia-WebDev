@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Educativo - TecnoAlerta</title>
+  <link rel="stylesheet" href="/src/css/quiz.css" />
+</head>
+<body>
+
+     <header>
+        <div id="menu">
+            <div id="logo-container">
+                <img id="logo" src="/src/assets/logo.png" alt="Logo TecnoAlerta" />
+            </div>
+
+            <button id="menu-toggle" aria-label="Abrir menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect y="4" width="24" height="2" fill="#fff" />
+                    <rect y="11" width="24" height="2" fill="#fff" />
+                    <rect y="18" width="24" height="2" fill="#fff" />
+                </svg>
+            </button>
+
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/src/pages/sobre.html">Sobre</a></li>
+                    <li><a href="/src/pages/quiz.html">Quiz</a></li>
+                    <li><a href="/src/pages/contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+  <div id="inicio">
+    <h1>Quiz Educativo</h1>
+    <h2>Tema: Causas, consequências e soluções para enchentes no Brasil</h2>
+    <p class="subtitle">Teste seus conhecimentos e veja como você pode ajudar a prevenir tragédias.</p>
+  </div id="inicio">
+
+  <main>
+    <form id="quiz-form"></form>
+    <button id="submit-btn">Enviar Respostas</button>
+    <div id="result-container" class="hidden">
+      <p id="score-text"></p>
+      <p id="feedback-message"></p>
+    </div>
+  </main>
+
+  <script src="/src/js/quiz.js"></script>
+</body>
+</html>
