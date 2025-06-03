@@ -1,7 +1,7 @@
 let imagens = [
-  "/src/assets/banner.png",
-  "/src/assets/area-alagada.png",
-  "/src/assets/voluntarios.png",
+  "src/assets/banner.png",
+  "src/assets/area-alagada.png",
+  "src/assets/voluntarios.png",
 ];
 
 let i = 0;
