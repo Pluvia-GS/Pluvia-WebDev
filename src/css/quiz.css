@@ -132,9 +132,7 @@ form {
 }
 
 .question-block input[type="radio"] {
-  margin-right: 15px;
-  accent-color: var(--cor-primaria);
-  transform: scale(1.2);
+  display: none;
 }
 
 /* Botões de navegação */
