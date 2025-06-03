@@ -38,86 +38,175 @@ main {
   padding: 40px 20px;
 }
 
+/* Barra de progresso */
+#progress-container {
+  background: white;
+  padding: 25px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--sombra-leve);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+#progress-bar {
+  width: 100%;
+  height: 12px;
+  background-color: #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+#progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--cor-primaria), var(--cor-acento));
+  border-radius: 6px;
+  transition: width 0.3s ease;
+  width: var(--progress-width, 10%);
+}
+
+#progress-text {
+  font-weight: 600;
+  color: var(--cor-primaria);
+  font-size: 1.1rem;
+}
+
+/* Container do quiz */
+#quiz-container {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--sombra-leve);
+  padding: 40px;
+  min-height: 400px;
+}
+
 /* Formulário do quiz */
 form {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+  margin-bottom: 30px;
 }
 
 .question-block {
-  background: white;
-  padding: 30px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--sombra-leve);
-  border-left: 4px solid var(--cor-acento);
-  transition: var(--transicao);
+  display: none;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-.question-block:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 121, 107, 0.15);
+.question-block.active {
+  display: block;
 }
 
 .question-block h3 {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   color: var(--cor-primaria);
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 600;
   line-height: 1.4;
 }
 
 .question-block label {
   display: block;
-  margin: 12px 0;
-  padding: 12px 15px;
+  margin: 15px 0;
+  padding: 15px 20px;
   background: var(--cor-fundo-alt);
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   transition: var(--transicao);
   font-weight: 500;
+  border: 2px solid transparent;
 }
 
 .question-block label:hover {
   background: #e8f5f3;
   transform: translateX(5px);
+  border-color: var(--cor-acento);
+}
+
+.question-block label.selected {
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-acento));
+  color: white;
+  transform: translateX(5px);
 }
 
 .question-block input[type="radio"] {
-  margin-right: 12px;
+  margin-right: 15px;
   accent-color: var(--cor-primaria);
+  transform: scale(1.2);
 }
 
-/* Botão de envio */
-button#submit-btn {
-  display: block;
-  margin: 40px auto;
-  padding: 18px 50px;
-  font-size: 1.2rem;
+/* Botões de navegação */
+#navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+#navigation-buttons button {
+  padding: 12px 25px;
+  font-size: 1rem;
   font-weight: 600;
-  background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-acento) 100%);
-  color: white;
   border: none;
   border-radius: 25px;
   cursor: pointer;
   transition: var(--transicao);
+  min-width: 120px;
+}
+
+#prev-btn {
+  background: #f5f5f5;
+  color: var(--cor-texto);
+  border: 2px solid #e0e0e0;
+}
+
+#prev-btn:hover:not(:disabled) {
+  background: #e8f5f3;
+  border-color: var(--cor-acento);
+  transform: translateY(-2px);
+}
+
+#prev-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#next-btn {
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-acento));
+  color: white;
   box-shadow: 0 4px 15px rgba(0, 121, 107, 0.3);
 }
 
-button#submit-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 121, 107, 0.4);
+#next-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 121, 107, 0.4);
 }
 
-button#submit-btn:active {
-  transform: translateY(-1px);
+#next-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Botão de finalizar */
+#submit-btn {
+  background: linear-gradient(135deg, #d32f2f, #f44336);
+  color: white;
+  box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+  font-size: 1.1rem;
+  padding: 15px 35px;
+}
+
+#submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(211, 47, 47, 0.4);
 }
 
 /* Container de resultados */
 #result-container {
   text-align: center;
-  margin-top: 40px;
-  padding: 40px;
+  padding: 50px 40px;
   background: white;
   border-radius: var(--border-radius);
   box-shadow: var(--sombra-leve);
@@ -125,21 +214,40 @@ button#submit-btn:active {
 
 #result-container h2 {
   color: var(--cor-primaria);
-  margin-bottom: 20px;
-  font-size: 2rem;
+  margin-bottom: 25px;
+  font-size: 2.2rem;
 }
 
 #score-text {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   margin-bottom: 20px;
   font-weight: 600;
   color: var(--cor-texto);
 }
 
 #feedback-message {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--cor-texto-claro);
   line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+#restart-btn {
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-acento));
+  color: white;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: var(--transicao);
+  box-shadow: 0 4px 15px rgba(0, 121, 107, 0.3);
+}
+
+#restart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 121, 107, 0.4);
 }
 
 .hidden {
@@ -165,33 +273,54 @@ button#submit-btn:active {
     padding: 20px 15px;
   }
 
-  .question-block {
-    padding: 20px;
+  #progress-container {
+    padding: 20px 15px;
+  }
+
+  #quiz-container {
+    padding: 25px 20px;
   }
 
   .question-block h3 {
     font-size: 1.1rem;
   }
 
-  button#submit-btn {
-    padding: 15px 35px;
-    font-size: 1.1rem;
+  .question-block label {
+    padding: 12px 15px;
+  }
+
+  #navigation-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #navigation-buttons button {
+    width: 100%;
+    min-width: auto;
   }
 
   #result-container {
-    padding: 25px 15px;
+    padding: 35px 20px;
   }
 
   #result-container h2 {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
+  }
+
+  #score-text {
+    font-size: 1.3rem;
+  }
+
+  #feedback-message {
+    font-size: 1.1rem;
   }
 }
 
-/* Animações para entrada suave dos elementos */
-@keyframes slideInUp {
+/* Animações */
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -199,13 +328,17 @@ button#submit-btn:active {
   }
 }
 
-.question-block {
-  animation: slideInUp 0.6s ease-out;
-  animation-fill-mode: both;
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.question-block:nth-child(2) { animation-delay: 0.1s; }
-.question-block:nth-child(3) { animation-delay: 0.2s; }
-.question-block:nth-child(4) { animation-delay: 0.3s; }
-.question-block:nth-child(5) { animation-delay: 0.4s; }
-.question-block:nth-child(6) { animation-delay: 0.5s; }
+.question-block.active {
+  animation: slideIn 0.4s ease-out;
+}

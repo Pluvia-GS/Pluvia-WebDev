@@ -48,11 +48,30 @@
   </div>
 
   <main>
-    <form id="quiz-form"></form>
-    <button id="submit-btn">Enviar Respostas</button>
+    <!-- Barra de progresso -->
+    <div id="progress-container">
+      <div id="progress-bar"></div>
+      <span id="progress-text">Pergunta 1 de 10</span>
+    </div>
+
+    <!-- Container do quiz -->
+    <div id="quiz-container">
+      <form id="quiz-form"></form>
+      
+      <!-- Botões de navegação -->
+      <div id="navigation-buttons">
+        <button type="button" id="prev-btn" disabled>Anterior</button>
+        <button type="button" id="next-btn">Próxima</button>
+        <button type="button" id="submit-btn" style="display: none;">Finalizar Quiz</button>
+      </div>
+    </div>
+
+    <!-- Resultado -->
     <div id="result-container" class="hidden">
+      <h2>Resultado do Quiz</h2>
       <p id="score-text"></p>
       <p id="feedback-message"></p>
+      <button type="button" id="restart-btn">Refazer Quiz</button>
     </div>
   </main>
 
