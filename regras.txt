@@ -1,0 +1,59 @@
+front-end 
+
+Front-end Design - Landing Page da
+Solução
+Bem-vindos ao desafio de Front-end Design! Este projeto permitirá aplicar todo o conhecimento
+adquirido durante o semestre, criando uma landing page completa para sua solução tecnológica
+contra enchentes. Sua entrega consistirá em uma landing page com menu de navegação e 6
+seções de conteúdo bem definidas, apresentando sua solução de forma clara e impactante.
+Estrutura da Landing Page
+Seção 1: O problema que sua solução irá resolver;
+Seção 2: As tecnologias que serão utilizadas;
+Seção 3: Os objetivos que pretendem alcançar;
+Seção 4: O público-alvo que será impactado;
+Seção 5: Os benefícios oferecidos pela solução;
+Seção 6: Como a solução ajudará no dia a dia dos usuários.
+Use imagens estrategicamente para criar conexões emocionais e explicar o funcionamento da
+solução de forma visual e intuitiva. Cada seção deve conter textos concisos (máximo 20 palavras
+por parágrafo e dois parágrafos por seção) e preferencialmente uma imagem ilustrativa.
+Requisitos Técnicos
+Código organizado em estrutura de pastas adequada
+Separação clara entre conteúdo (HTML), formatação (CSS) e comportamento
+Menu funcional para navegação entre seções
+Uso de Google Fonts e paleta de cores padronizada
+Design limpo e agradável, não poluído
+Utilização de flexbox em toda a estrutura
+Links formatados corretamente
+Rodapé padrão ao final da página
+Uso de atributos alt em todas as imagens (essencial para acessibilidade)
+Implementação de variáveis CSS e reset CSS
+Indicação clara da seção atual para o usuário
+Entrega
+Prazo: até 07/06 pelo Portal FIAP (área de entrega de trabalhos); Formato: arquivo compactado
+contendo a pasta do projeto com HTML, CSS e imagens, mais o arquivo integrantes.txt com nomes
+e RMs dos membros do grupo;Importante: utilize apenas HTML e CSS puros - sem bibliotecas ou
+frameworks. Certifique-se de que todos os links de imagens e CSS estejam funcionando
+corretamente no navegador. Apenas uma pessoa do grupo deve realizar a entrega.
+
+
+Webdev
+
+WebDev - Funcionalidades e
+Interatividade
+Bem-vindos a este desafio empolgante que aplicará todo o conhecimento adquirido ao longo do
+semestre! A disciplina de WebDev será responsável pelo desenvolvimento das funcionalidades e
+elementos interativos do projeto Front-end.
+Requisitos técnicos:
+Versionamento: Utilize branches para gerenciar commits e merge para integrar à main/master
+Repositório: Crie o projeto dentro de uma Organização com seu time como colaboradores
+Commits: Realize no mínimo 15 commits ao longo do desenvolvimento
+JavaScript: Utilize apenas JavaScript puro (vanilla) - sem frameworks
+SlideShow: Desenvolva uma apresentação com 3 imagens relacionadas ao tema
+Validação: Implemente verificação de campos obrigatórios nos formulários
+Responsividade: Crie um menu hambúrguer para dispositivos móveis
+Quiz: Desenvolva um quiz interativo com 10 perguntas sobre o tema, exibindo resultado final
+Personalização: Implemente 3 ícones no menu de navegação para alternar entre diferentes
+cores de fundo
+Entrega:
+Crie o arquivo equipe.txt contendo nome, RM de cada integrante e o link do repositório. Compacte
+o projeto completo para que apenas um membro da equipe faça o envio através do Sistema FIAP.
