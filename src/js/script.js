@@ -42,7 +42,41 @@ const buttons = document.querySelectorAll(".theme-btn");
 buttons.forEach((btn) => {
   btn.addEventListener("click", () => {
     const color = btn.getAttribute("data-color");
+    
+    // Aplicar cor ao body
     document.body.style.backgroundColor = color;
+    
+    // Aplicar cor às seções que têm cores específicas
+    const sectionsWithBackground = document.querySelectorAll('section:nth-child(even), #objetivos, #beneficios');
+    sectionsWithBackground.forEach(section => {
+      section.style.backgroundColor = color;
+    });
+    
+    // Aplicar cor aos elementos com fundo alternativo
+    const altBackgroundElements = document.querySelectorAll('.question-block label, #progress-container, #quiz-container, #result-container');
+    altBackgroundElements.forEach(element => {
+      element.style.backgroundColor = color;
+    });
+    
+    // Ajustar a opacidade para elementos que precisam de um tom mais claro
+    const lightBackgroundElements = document.querySelectorAll('.question-block label');
+    lightBackgroundElements.forEach(element => {
+      element.style.backgroundColor = color;
+      element.style.opacity = '0.7';
+    });
+    
+    // Para a chamada do quiz
+    const quizCall = document.querySelector('.chamada-quiz');
+    if (quizCall) {
+      // Manter o gradiente do quiz mas com tons da cor escolhida
+      if (color === '#f0f8ff') {
+        quizCall.style.background = 'linear-gradient(135deg, #4285f4, #1e88e5)';
+      } else if (color === '#fffacd') {
+        quizCall.style.background = 'linear-gradient(135deg, #ff9800, #f57c00)';
+      } else if (color === '#e6ffe6') {
+        quizCall.style.background = 'linear-gradient(135deg, #4caf50, #2e7d32)';
+      }
+    }
   });
 });
 
