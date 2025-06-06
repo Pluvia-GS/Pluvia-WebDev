@@ -137,8 +137,7 @@ cd Pluvia-WebDev
 
 ## Equipe de Desenvolvimento
 
-- **Rogerio Arroyo** - RM 563517
-- **Luigi Cabrini** - RM 563552
+
 - **Anthony Sforzin** - RM 562096
 - **Thayna Simoes** - RM 566456
 - **Bruno Koeke** - RM 561309
